@@ -6,9 +6,16 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Task: Identifiable {
-    let id = UUID()
+@Model
+class Task {
+    var id = UUID()
     var title: String
-    var isCompleted: Bool = false
+    var isCompleted: Bool
+
+    init(title: String) {
+        self.title = title
+        self.isCompleted = false
+    }
 }
